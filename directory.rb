@@ -1,4 +1,4 @@
-students_array = ["Dr. Hannibal Lecter","Darth Vader",
+students = ["Dr. Hannibal Lecter","Darth Vader",
 "Nurse Ratched","Michael Corleone",
 "Alex Delarge","The Wicked Witch of the West",
 "Terminator","Freddy Kroger",
@@ -6,13 +6,25 @@ students_array = ["Dr. Hannibal Lecter","Darth Vader",
 "Norman Bates"
     ]
 
+def print_header
 puts "The students of Villains Academy"
 puts "---------------------------------"
-students_array.each do |student|
-    puts student
 end
-puts "Overall, we have #{students_array.count} great students"
+
+def print(names)
+   names.each do |name|
+       puts name
+end
+end
+
+def print_footer(names)
+puts "Overall, we have #{names.count} great students"
+end
 
 #puts has return at the end
 #print does not have return
 #() are not necessary when quoting an argument
+
+print_header
+print(students)
+print_footer(students)
