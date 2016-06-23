@@ -1,5 +1,5 @@
 puts "The students of Villains Academy"
-puts "------------------"
+puts "---------------------------------"
 puts "Dr. Hannibal Lecter"
 puts "Darth Vader"
 puts "Nurse Ratched"
