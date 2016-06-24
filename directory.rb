@@ -21,13 +21,22 @@ puts "---------------------------------"
 end
 
 def print(students)
-   students.each.with_index(1) do |student, index|
-       puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+    
+        return students.each do |student|
+        puts "#{student[:name]} (#{student[:cohort]} cohort)"
+        students.each do |student|
+             end
+        
+# students.select { |name| name.include?('T') } --- Ex 8.2?
 end
 end
 
 def print_footer(students)
-puts "Overall, we have #{students.count} great students"
+    if students.count == 0
+        return puts "You have not quoted any students"
+        elsif students.count > 0
+    return puts "Overall, we have #{students.count} great students"
+end
 end
 
 #puts has return at the end
@@ -37,6 +46,46 @@ students = input_students
 print_header
 print(students)
 print_footer(students)
+
+#---------Exercises ----------------
+# Excercise 8.11 - Complete - In Typos.rb
+#----------------------------------------------------
+# Excercise 8.1 - complete:
+#
+# def print(students)
+#   students.each.with_index(1) do |student, index|
+#       puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+#  end
+# end
+#-----------------------------------------------------
+# Exercise 8.2
+#-----------------------------------------------------
+# Exercise 8.3
+#-----------------------------------------------------
+# Exercise 8.4
+#-----------------------------------------------------
+# Exercise 8.5
+#-----------------------------------------------------
+# Exercise 8.6
+#-----------------------------------------------------
+# Exercise 8.7
+#-----------------------------------------------------
+# Exercise 8.8
+#-----------------------------------------------------
+# Exercise 8.9
+#-----------------------------------------------------
+# Exercise 8.10
+#-----------------------------------------------------
+# Exercise 8.12 - complete :
+#
+# def print_footer(students)
+#     if students.count == 0
+#         return puts "You have not quoted any students"
+#         elsif students.count > 0
+#     return puts "Overall, we have #{students.count} great students"
+#  end
+# end
+#-----------------------------------------------------
 
 #students = [
 #{name: "Dr. Hannibal Lecter",cohort: :november},
