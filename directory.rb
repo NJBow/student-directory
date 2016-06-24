@@ -32,11 +32,7 @@ end
 end
 
 def print_footer(students)
-    if students.count == 0
-        return puts "You have not quoted any students"
-        elsif students.count > 0
     return puts "Overall, we have #{students.count} great students"
-end
 end
 
 #puts has return at the end
@@ -48,8 +44,6 @@ print(students)
 print_footer(students)
 
 #---------Exercises ----------------
-# Excercise 8.11 - Complete - In Typos.rb
-#----------------------------------------------------
 # Excercise 8.1 - complete:
 #
 # def print(students)
@@ -76,6 +70,11 @@ print_footer(students)
 #-----------------------------------------------------
 # Exercise 8.10
 #-----------------------------------------------------
+# Exercise 8.11 - complete:
+#
+#       In Typos.rb
+#
+#----------------------------------------------------
 # Exercise 8.12 - complete :
 #
 # def print_footer(students)
