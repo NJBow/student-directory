@@ -27,19 +27,42 @@ puts "The students of Villains Academy"
 puts "---------------------------------"
 end
 
-def print(students)
+#def print(students)
 #   puts "Please provide the first initial of the students first name:"
- #   letter = gets.chomp.upcase
-  #  if students.each[0] == letter
-        return students.each do |student|
-        puts "#{student[:name]} (#{student[:cohort]} cohort)"
-        students.each do |student|
-        end
-    end
+#    letter = gets.chomp.upcase
+#    if students.each[0] == letter
+#  students.select { |name| name[0] == letter}
+#        return students.each do |student|
+#        puts "#{student[:name]} (#{student[:cohort]} cohort)"
+#        students.each do |student|
+#        end
+#    end
+#end
+#end
+    
+    
+    
+def print_students(students)
+
+puts "Please provide the first initial of the students first name:"
+letter = gets.chomp.capitalize
+
+
+
+students.each do |student|
+ if student[:name][0] == letter 
+       puts "#{student[:name]} (#{student[:cohort]} cohort)"
+       end
+end
+end
+    
+    
+    
+    
    #     else
       #      puts "None of the students provided match your criteria"
     #    end
- end
+ #end
         
 #------ students.select { |name| name.include?('T') } --- Ex 8.2?
 #------ letter = gets.chomp ...... if name[0] == letter
@@ -62,7 +85,8 @@ end
 
 students = input_students
 print_header
-print(students)
+#print(students)
+print_students(students)
 print_footer(students)
 #----------initial(students)
 
