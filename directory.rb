@@ -7,8 +7,14 @@ def input_students
     
     while !name.empty? do
         students << {name: name, cohort: :november}
-        puts "Now we have #{students.count} students"
+        if  students.count == 1
+        puts "Now we have #{students.count} student"
         name = gets.chomp
+        elsif  students.count > 1
+        puts "now we have #{students.count} students"
+        name =gets.chomp
+    end
+        
     end
     students
 end
@@ -21,27 +27,47 @@ puts "---------------------------------"
 end
 
 def print(students)
-    
+#   puts "Please provide the first initial of the students first name:"
+ #   letter = gets.chomp.upcase
+  #  if students.each[0] == letter
         return students.each do |student|
         puts "#{student[:name]} (#{student[:cohort]} cohort)"
         students.each do |student|
-             end
+        end
+    end
+   #     else
+      #      puts "None of the students provided match your criteria"
+    #    end
+ end
         
-# students.select { |name| name.include?('T') } --- Ex 8.2?
-end
-end
+#------ students.select { |name| name.include?('T') } --- Ex 8.2?
+#------ letter = gets.chomp ...... if name[0] == letter
+#------ return puts "#{student[:name]} (#{student[:cohort]} cohort)"
+#------ students.select { |name| name.start_with? letter}
 
 def print_footer(students)
+    if students.count>=2
     return puts "Overall, we have #{students.count} great students"
+    elsif students.count ==1
+ return puts "Overall, we have #{students.count} great student"
+ end
 end
 
-#puts has return at the end
-#print does not have return
-#() are not necessary when quoting an argument
+#----- def initial(students)
+#----- puts "Please provide the first initial of the students first name"
+#----- letter = gets.chomp
+#----- students.select {|name, letter| name.start_with? letter}
+#----- end
+
 students = input_students
 print_header
 print(students)
 print_footer(students)
+#----------initial(students)
+
+
+
+
 
 #---------Exercises ----------------
 # Excercise 8.1 - complete:
