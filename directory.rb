@@ -3,7 +3,8 @@ def input_students
     puts "Please enter the names of the students"
     puts "to finish, just hit return twice"
     students = []
-    name = gets.chomp
+    # name = gets.chomp
+    name = gets.chop
     
     while !name.empty? do
         students << {name: name, cohort: :november}
@@ -92,9 +93,41 @@ print_footer(students)
 #-----------------------------------------------------
 # Exercise 8.8
 #-----------------------------------------------------
-# Exercise 8.9
+# Exercise 8.9 - complete:
+#
+#
+# def input_students
+#    puts "Please enter the names of the students"
+#    puts "to finish, just hit return twice"
+#    students = []
+#    name = gets.chomp
+#    
+#    while !name.empty? do
+#        students << {name: name, cohort: :november}
+#        if  students.count == 1
+#        puts "Now we have #{students.count} student"
+#        name = gets.chomp
+#        elsif  students.count > 1
+#        puts "now we have #{students.count} students"
+#        name =gets.chomp
+#    end
+#        
+#    end
+#    students
+# end
+# 
+# def print_footer(students)
+#     if students.count>=2
+#     return puts "Overall, we have #{students.count} great students"
+#     elsif students.count ==1
+#  return puts "Overall, we have #{students.count} great student"
+#  end
+# end
 #-----------------------------------------------------
-# Exercise 8.10
+# Exercise 8.10 - complete
+#
+# .chop method used - Return will be last character. chop removes final character
+#
 #-----------------------------------------------------
 # Exercise 8.11 - complete:
 #
