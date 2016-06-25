@@ -1,18 +1,17 @@
 
 def input_students
-    puts "Please enter the names of the students"
-    puts "to finish, just hit return twice"
+    puts "Please enter the names of the students".center(100)
+    puts "to finish, just hit return twice".center(100)
     students = []
-    # name = gets.chomp
-    name = gets.chop
+    name = gets.chomp
     
     while !name.empty? do
         students << {name: name, cohort: :november}
         if  students.count == 1
-        puts "Now we have #{students.count} student"
+        puts "Now we have #{students.count} student".center(100)
         name = gets.chomp
         elsif  students.count > 1
-        puts "now we have #{students.count} students"
+        puts "now we have #{students.count} students".center(100)
         name =gets.chomp
     end
         
@@ -23,72 +22,41 @@ end
 
 
 def print_header
-puts "The students of Villains Academy"
-puts "---------------------------------"
+puts "The students of Villains Academy".center(100)
+puts "---------------------------------".center(100)
 end
 
-#def print(students)
-#   puts "Please provide the first initial of the students first name:"
-#    letter = gets.chomp.upcase
-#    if students.each[0] == letter
-#  students.select { |name| name[0] == letter}
-#        return students.each do |student|
-#        puts "#{student[:name]} (#{student[:cohort]} cohort)"
-#        students.each do |student|
-#        end
-#    end
-#end
-#end
     
     
     
 def print_students(students)
 
-puts "Please provide the first initial of the students first name:"
-letter = gets.chomp.capitalize
-
-
-
 students.each do |student|
- if student[:name][0] == letter 
-       puts "#{student[:name]} (#{student[:cohort]} cohort)"
+       puts "#{student[:name]} (#{student[:cohort]} cohort)".center(100)
        end
 end
-end
+
     
     
     
     
-   #     else
-      #      puts "None of the students provided match your criteria"
-    #    end
- #end
-        
-#------ students.select { |name| name.include?('T') } --- Ex 8.2?
-#------ letter = gets.chomp ...... if name[0] == letter
-#------ return puts "#{student[:name]} (#{student[:cohort]} cohort)"
-#------ students.select { |name| name.start_with? letter}
+
+
 
 def print_footer(students)
     if students.count>=2
-    return puts "Overall, we have #{students.count} great students"
+    return puts "Overall, we have #{students.count} great students".center(100)
     elsif students.count ==1
- return puts "Overall, we have #{students.count} great student"
+ return puts "Overall, we have #{students.count} great student".center(100)
  end
 end
 
-#----- def initial(students)
-#----- puts "Please provide the first initial of the students first name"
-#----- letter = gets.chomp
-#----- students.select {|name, letter| name.start_with? letter}
-#----- end
+
 
 students = input_students
 print_header
-#print(students)
 print_students(students)
 print_footer(students)
-#----------initial(students)
 
 
 
@@ -103,7 +71,25 @@ print_footer(students)
 #  end
 # end
 #-----------------------------------------------------
-# Exercise 8.2
+# Exercise 8.2 - complete
+#
+#def print_students(students)
+#
+#puts "Please provide the first initial of the students first name:"
+#letter = gets.chomp.capitalize
+#
+#students.each do |student|
+# if student[:name][0] == letter 
+#       puts "#{student[:name]} (#{student[:cohort]} cohort)"
+#       end
+#end
+#end
+#
+#------ students.select { |name| name.include?('T') } --- Ex 8.2?
+#------ letter = gets.chomp ...... if name[0] == letter
+#------ return puts "#{student[:name]} (#{student[:cohort]} cohort)"
+#------ students.select { |name| name.start_with? letter}
+#
 #-----------------------------------------------------
 # Exercise 8.3
 #-----------------------------------------------------
