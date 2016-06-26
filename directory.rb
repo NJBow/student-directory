@@ -32,8 +32,10 @@ end
 def print_students(students)
 
 students.each do |student|
+    if student[:name].length < 12
        puts "#{student[:name]} (#{student[:cohort]} cohort)".center(100)
        end
+   end
 end
 
     
@@ -44,7 +46,7 @@ end
 
 
 def print_footer(students)
-    if students.count>=2
+    if students.count > 1
     return puts "Overall, we have #{students.count} great students".center(100)
     elsif students.count ==1
  return puts "Overall, we have #{students.count} great student".center(100)
@@ -97,7 +99,12 @@ print_footer(students)
 #-----------------------------------------------------
 # Exercise 8.5
 #-----------------------------------------------------
-# Exercise 8.6
+# Exercise 8.6 - complete
+#
+# - Using .center(100)
+# may only be applied to Strings
+# Can not be used with gets.chomp or variable.center() == gets.chomp --- is not possible endless return.
+#
 #-----------------------------------------------------
 # Exercise 8.7
 #-----------------------------------------------------
