@@ -32,11 +32,9 @@ end
 def print_students(students)
 
 students.each do |student|
-    if student[:name].length < 12
        puts "#{student[:name]} (#{student[:cohort]} cohort)".center(100)
        end
    end
-end
 
     
     
@@ -93,7 +91,17 @@ print_footer(students)
 #------ students.select { |name| name.start_with? letter}
 #
 #-----------------------------------------------------
-# Exercise 8.3
+# Exercise 8.3 - complete
+#
+# def print_students(students)
+#
+# students.each do |student|
+#     if student[:name].length < 12
+#        puts "#{student[:name]} (#{student[:cohort]} cohort)".center(100)
+#        end
+#    end
+# end
+#  
 #-----------------------------------------------------
 # Exercise 8.4
 #-----------------------------------------------------
