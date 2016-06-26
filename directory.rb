@@ -4,9 +4,15 @@ def input_students
     puts "to finish, just hit return twice".center(100)
     students = []
     name = gets.chomp
+    puts  "Student's date of birth?"
+    puts "Please input date in the dd/mm/yyyy layout."
+    dob = gets.chomp
+    puts "How tall is the student?"
+    puts "Please use metric units, e.g 1.83m (for 183cm or 6 foot)"
+    height = gets.chomp
     
     while !name.empty? do
-        students << {name: name, cohort: :november}
+        students << {name: name, cohort: :november, dob: dob, height: height}
         if  students.count == 1
         puts "Now we have #{students.count} student".center(100)
         name = gets.chomp
@@ -32,7 +38,7 @@ end
 def print_students(students)
 
 students.each do |student|
-       puts "#{student[:name]} (#{student[:cohort]} cohort)".center(100)
+       puts "#{student[:name]} (#{student[:cohort]} cohort) born #{student[:dob]}, and is #{student[:height]}m tall".center(100)
        end
    end
 
@@ -70,6 +76,7 @@ print_footer(students)
 #       puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
 #  end
 # end
+#
 #-----------------------------------------------------
 # Exercise 8.2 - complete
 #
