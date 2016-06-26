@@ -1,53 +1,46 @@
 
 def input_students
+
     puts "Please enter the names of the students".center(100)
     puts "to finish, just hit return twice".center(100)
-    students = []
-    name = gets.chomp
-    puts  "Student's date of birth?"
-    puts "Please input date in the dd/mm/yyyy layout."
-    dob = gets.chomp
-    puts "How tall is the student?"
-    puts "Please use metric units, e.g 1.83m (for 183cm or 6 foot)"
-    height = gets.chomp
-    
+  students = []
+ name = gets.chomp
+ puts "Which cohort were they part of?"
+ puts "Only put the month they were part of the cohort"
+cohort = gets.chomp
+if cohort == ""
+    cohort = "november".to_sym
+    elsif cohort.downcase != (((("january"or"february")or("march"or"april"))or(("may"or"june")or("july"or "august")))or(("september"or"october")or("november"or"december")))
+    puts "Oops! Make sure you've spelt the month correctly"
+    cohort = gets.chomp
+end
     while !name.empty? do
-        students << {name: name, cohort: :november, dob: dob, height: height}
+        students << {name: name, cohort: cohort.downcase.to_sym}
         if  students.count == 1
         puts "Now we have #{students.count} student".center(100)
         name = gets.chomp
+        cohort = gets.chomp
         elsif  students.count > 1
         puts "now we have #{students.count} students".center(100)
         name =gets.chomp
+        cohort = gets.chomp
     end
         
     end
     students
 end
 
-
-
 def print_header
 puts "The students of Villains Academy".center(100)
 puts "---------------------------------".center(100)
 end
 
-    
-    
-    
 def print_students(students)
-
 students.each do |student|
-       puts "#{student[:name]} (#{student[:cohort]} cohort) born #{student[:dob]}, and is #{student[:height]}m tall".center(100)
+       puts "#{student[:name]} (#{student[:cohort]} cohort)".center(100)
+    
        end
    end
-
-    
-    
-    
-    
-
-
 
 def print_footer(students)
     if students.count > 1
@@ -110,9 +103,35 @@ print_footer(students)
 # end
 #  
 #-----------------------------------------------------
-# Exercise 8.4
+# Exercise 8.4 - no clue
 #-----------------------------------------------------
-# Exercise 8.5
+# Exercise 8.5 - complete
+#
+# def input_students
+#    puts "Please enter the names of the students".center(100)
+#    puts "to finish, just hit return twice".center(100)
+#    students = []
+#    name = gets.chomp
+#    puts  "Student's date of birth?"
+#    puts "Please input date in the dd/mm/yyyy layout."
+#    dob = gets.chomp
+#    puts "How tall is the student?"
+#    puts "Please use metric units, e.g 1.83m (for 183cm or 6 foot)"
+#    height = gets.chomp
+#    
+#    while !name.empty? do
+#        students << {name: name, cohort: :november, dob: dob, height: height}
+#        if  students.count == 1
+#        puts "Now we have #{students.count} student".center(100)
+#        name = gets.chomp
+#        elsif  students.count > 1
+#        puts "now we have #{students.count} students".center(100)
+#        name =gets.chomp
+#    end
+#        
+#    end
+#    students
+# end
 #-----------------------------------------------------
 # Exercise 8.6 - complete
 #
