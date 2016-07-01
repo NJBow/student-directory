@@ -10,6 +10,8 @@ def input_students
 cohort = gets.chomp
 if cohort == ""
     cohort = "november".to_sym
+    elsif cohort.downcase == (((("january"or"february")or("march"or"april"))or(("may"or"june")or("july"or "august")))or(("september"or"october")or("november"or"december")))
+    return cohort
     elsif cohort.downcase != (((("january"or"february")or("march"or"april"))or(("may"or"june")or("july"or "august")))or(("september"or"october")or("november"or"december")))
     puts "Oops! Make sure you've spelt the month correctly"
     cohort = gets.chomp
@@ -24,6 +26,7 @@ end
         puts "now we have #{students.count} students".center(100)
         name =gets.chomp
         cohort = gets.chomp
+        cohort.to_sym
     end
         
     end
@@ -36,9 +39,14 @@ puts "---------------------------------".center(100)
 end
 
 def print_students(students)
-students.each do |student|
-       puts "#{student[:name]} (#{student[:cohort]} cohort)".center(100)
-    
+#students.each do |student|
+ #      puts "#{student[:name]} (#{student[:cohort]} cohort)".center(100)
+  cohort.to_s
+   students.select do |student,cohort| student, (cohort == "november")
+  # or
+  # students.grep {/march/}
+   # students.select do |student, cohort_m| cohort_m = students[:cohort.to_s.to_i]
+    puts "#{student[:name]} (#{student[:cohort]} cohort)"
        end
    end
 
@@ -140,9 +148,43 @@ print_footer(students)
 # Can not be used with gets.chomp or variable.center() == gets.chomp --- is not possible endless return.
 #
 #-----------------------------------------------------
-# Exercise 8.7
+# Exercise 8.7 - complete
+#
+# def input_students
+#
+#     puts "Please enter the names of the students".center(100)
+#     puts "to finish, just hit return twice".center(100)
+#    students = []
+#   name = gets.chomp
+#   puts "Which cohort were they part of?"
+#   puts "Only put the month they were part of the cohort"
+#  cohort = gets.chomp
+# if cohort == ""
+#    cohort = "november".to_sym
+#    elsif cohort.downcase != (((("january"or"february")or("march"or"april"))or(("may"or"june")or("july"or "august")))or(("september"or"october")or("november"or"december")))
+#    puts "Oops! Make sure you've spelt the month correctly"
+#    cohort = gets.chomp
+# end
+#    while !name.empty? do
+#        students << {name: name, cohort: cohort.downcase.to_sym}
+#        if  students.count == 1
+#        puts "Now we have #{students.count} student".center(100)
+#        name = gets.chomp
+#        cohort = gets.chomp
+#        elsif  students.count > 1
+#        puts "now we have #{students.count} students".center(100)
+#        name =gets.chomp
+#        cohort = gets.chomp
+#    end
+#        
+#    end
+#    students
+# end
+# 
 #-----------------------------------------------------
-# Exercise 8.8
+# Exercise 8.8 -
+#
+#
 #-----------------------------------------------------
 # Exercise 8.9 - complete:
 #
